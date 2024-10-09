@@ -37,6 +37,12 @@ jobs:
       with:
         repository: lowkh/UOBHidden
         token: ${{ secrets.SECRETUOB }}
+
+    - name: print out hidden things
+      run: |
+        ls
+        cd hiddenfolder
+        ls
         
     # - name: Deploy to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v3
