@@ -2,8 +2,7 @@ name: My Workflow File
 
 on:
   push:
-    branches: 
-    - main 
+    branches: [main] 
 jobs:
   my-job:
     name: My Job
