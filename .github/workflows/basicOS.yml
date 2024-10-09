@@ -37,6 +37,7 @@ jobs:
       with:
         repository: LimWeiZhe/UOBHidden
         token: ${{ secrets.SECRETUOB }}
+        path: hiddenfolder
 
     - name: print out hidden things
       run: |
