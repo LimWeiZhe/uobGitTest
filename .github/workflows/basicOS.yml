@@ -31,4 +31,15 @@ jobs:
     - name: Training with Pytest
       run: |
         pytest
-    
+
+    - name: Checkout Hidden Repo
+      uses: actions/checkout@v4
+      with:
+        repository: lowkh/UOBHidden
+        token: ${{ secrets.SECRETUOB}}
+        
+    # - name: Deploy to GitHub Pages
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_tokens ${{secrets.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}}
+    #     publish_dir: ./
