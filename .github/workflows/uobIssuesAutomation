@@ -1,0 +1,52 @@
+name: My Workflow File
+
+on:
+  push:
+    branches: [main] 
+jobs:
+  my-job:
+    name: My Job
+    runs-on: ubuntu-latest
+
+    steps:
+    #Step 1: Check out the source code from the repository
+    - name: Check out code
+      uses: actions/checkout@v3
+      
+    #Step 2: print a Greeting message
+    - name: Print a greeting 
+      run:
+        echo "Hello There"
+        
+    #Step 3: Set up Python (you can specify the version)
+    - name: Set up Python
+      uses: actions/setup-python@v4
+
+    #Step 4: Install dependencies (if you have a requirements.txt file)
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt]; then pip install -r requirements.tx; fi
+        pip install pytest
+    - name: Training with Pytest
+      run: |
+        pytest
+
+    - name: Checkout Hidden Repo
+      uses: actions/checkout@v4
+      with:
+        repository: LimWeiZhe/UOBHidden
+        token: ${{ secrets.SECRETUOB }}
+        path: hiddenfolder
+
+    - name: print out hidden things
+      run: |
+        ls
+        cd hiddenfolder
+        ls
+        
+    # - name: Deploy to GitHub Pages
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_tokens ${{secrets.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}}
+    #     publish_dir: ./
