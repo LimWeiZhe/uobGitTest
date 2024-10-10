@@ -60,9 +60,4 @@ jobs:
     # The message to display in the Discord message.
         args: "Hi Ben!"
           
-    
-    # - name: Deploy to GitHub Pages
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     github_tokens ${{secrets.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}}
-    #     publish_dir: ./
+  
