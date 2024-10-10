@@ -45,6 +45,14 @@ jobs:
         cd hiddenfolder
         ls
         
+    - name: Discord notification
+      env:
+        DISCORD_WEBHOOK: ${{ secrets."https://discord.com/api/webhooks/1293767681069289502/4eVwiW1wmTOxcqjbv0qPn9rw5lQpfuiLIwrZ13JOW43nayW9FdCxZX6LCRhWFFIH3iyH" }}
+      uses: Ilshidur/action-discord@master
+      with:
+        args: 'The project {{ LimWeiZhe/uobGitTest.repository.full_name }} has been deployed.'
+
+        
     # - name: Deploy to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v3
     #   with:
