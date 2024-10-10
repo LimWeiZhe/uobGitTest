@@ -45,7 +45,11 @@ jobs:
     #     cd hiddenfolder
     #     ls
         
-
+    - name: discord
+      uses: sebastianpopp/discord-action@releases/v2
+      with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        message: ${{ github.repository }} has been successfullly deployed.
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
@@ -58,6 +62,6 @@ jobs:
       uses: sebastianpopp/discord-action@releases/v2
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        message: ${{ github.repository }} has been successfullly deployed.
+        message: ${{ github.repository }} has been successfullly deployed. Head to https://limweizhe.github.io/uobGitTest/.
 
           
