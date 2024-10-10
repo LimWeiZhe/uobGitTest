@@ -32,24 +32,24 @@ jobs:
       run: |
         pytest
 
-    - name: Checkout Hidden Repo
-      uses: actions/checkout@v4
-      with:
-        repository: LimWeiZhe/UOBHidden
-        token: ${{ secrets.SECRETUOB }}
-        path: hiddenfolder
-
-    - name: print out hidden things
-      run: |
-        ls
-        cd hiddenfolder
-        ls
-        
-    # - name: discord
-    #   uses: sebastianpopp/discord-action@releases/v2
+    # - name: Checkout Hidden Repo
+    #   uses: actions/checkout@v4
     #   with:
-    #     webhook: ${{ secrets.DISCORD_WEBHOOK }}
-    #     message: ${{ github.repository }} has been successfullly deployed.
+    #     repository: LimWeiZhe/UOBHidden
+    #     token: ${{ secrets.SECRETUOB }}
+    #     path: hiddenfolder
+
+    # - name: print out hidden things
+    #   run: |
+    #     ls
+    #     cd hiddenfolder
+    #     ls
+        
+    - name: discord
+      uses: sebastianpopp/discord-action@releases/v2
+      with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        message: ${{ github.repository }} has been successfullly deployed.
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
