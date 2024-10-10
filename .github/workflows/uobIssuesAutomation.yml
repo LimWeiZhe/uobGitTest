@@ -27,7 +27,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt]; then pip install -r requirements.tx; fi
-        pip install pytest
+        pip install pytest-cov
     - name: Training with Pytest
       run: |
         pytest: -v -cov --junitxml=report.xml
@@ -45,12 +45,12 @@ jobs:
         cd hiddenfolder
         ls
         
-    - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      if: always()
-      with:
-        files: |
-          junit_files: "report.xml"
+    # - name: Publish Test Results
+    #   uses: EnricoMi/publish-unit-test-result-action@v2
+    #   if: always()
+    #   with:
+    #     files: |
+    #       junit_files: "report.xml"
           
     - name: Actions for Discord
   # You may pin to the exact commit or the version.
