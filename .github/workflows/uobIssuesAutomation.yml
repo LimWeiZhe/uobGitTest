@@ -1,10 +1,10 @@
-name: My Workflow File
+name: My Second Workflow File
 
 on:
-  push:
+  pull_request:
     branches: [main] 
 jobs:
-  my-job:
+  my-job2:
     name: My Job
     runs-on: ubuntu-latest
 
@@ -30,7 +30,7 @@ jobs:
         pip install pytest
     - name: Training with Pytest
       run: |
-        pytest
+        pytest: -v -cov --junitxml=report.xml
 
     - name: Checkout Hidden Repo
       uses: actions/checkout@v4
