@@ -45,14 +45,14 @@ jobs:
         cd hiddenfolder
         ls
         
-    - name: discord
-      uses: sebastianpopp/discord-action@releases/v2
-      with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        message: ${{ github.repository }} has been successfullly deployed.
+    # - name: discord
+    #   uses: sebastianpopp/discord-action@releases/v2
+    #   with:
+    #     webhook: ${{ secrets.DISCORD_WEBHOOK }}
+    #     message: ${{ github.repository }} has been successfullly deployed.
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{secrets.github_token}}
-        publish_dir: ./
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
